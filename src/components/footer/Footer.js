@@ -5,6 +5,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import {SiGmail} from "react-icons/si";
+import './footer.css';
 function Footer() {
   return (
     <Container fluid className="footer">

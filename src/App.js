@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Preloader from "../src/components/Pre";
-import Navbar from "./components/Navbar";
+import Preloader from "../src/components/preloader/Pre";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Acheivements from "./components/Acheivements/Acheivements";
-import Footer from "./components/Footer";
+import Footer from "./components/footer/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import {
   BrowserRouter as Router,
@@ -13,7 +13,7 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/scrollbar/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";

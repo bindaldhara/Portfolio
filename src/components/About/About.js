@@ -4,6 +4,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import mine from "../../Assets/mine1.jpg";
 import Toolstack from "./Toolstack";
+import './about.css';
 
 function About() {
   return (

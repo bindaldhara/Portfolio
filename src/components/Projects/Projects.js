@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
+import './projects.css';
 
 import picture from "../../Assets/Picture1.png";
 import yelp from "../../Assets/yelp.png";

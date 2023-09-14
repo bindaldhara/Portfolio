@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import './scrollbar.css';
 import { useLocation } from "react-router-dom";
 
 function ScrollToTop() {

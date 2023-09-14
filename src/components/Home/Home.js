@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import workingMan from "../../Assets/200.gif";
 import Type from "./Type";
+import  './home.css';
 
 function Home() {
   return (

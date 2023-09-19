@@ -8,7 +8,7 @@ function AboutCard() {
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
             Hello, I am Dhara Bindal from Indore, MP.
-            <br/>An inspiring pre final year student with great understanding in C++ , 
+            <br/>An inspiring final year student with great understanding in C++ , 
             skilled in Data Structures. I am a competitive programmer and also a web developer.
             <br />
             <br />

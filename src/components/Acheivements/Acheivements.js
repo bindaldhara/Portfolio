@@ -25,7 +25,7 @@ function About() {
             <AcheivementsCard />
           </Col>
           <Col
-            md={5}
+            md={4}
             style={{ paddingTop: "50px", paddingBottom: "50px" }}
             className="about-img"
           >

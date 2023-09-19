@@ -96,6 +96,7 @@ function NavBar() {
                <CgFileDocument style={{ marginBottom: "2px" }} /> Acheivements
               </Nav.Link>
             </Nav.Item>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

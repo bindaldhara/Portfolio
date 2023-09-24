@@ -18,9 +18,8 @@ function ResumeNew() {
   return (
     <div>
       <Container fluid className="resume-section">
-        
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
+          <Button 
             variant="primary"
             href={pdf}
             target="_blank"
@@ -33,7 +32,7 @@ function ResumeNew() {
 
         <Row className="resume">
           <Document file={pdf} className="d-flex justify-content-center">
-            <Page pageNumber={1} scale={width > 76 ? 1 : 0.6} />
+            <Page pageNumber={1} scale={width > 786 ? 1 : 0.7} />
           </Document>
         </Row>
       </Container>

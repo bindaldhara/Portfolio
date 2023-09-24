@@ -56,6 +56,8 @@
     padding: 0 !important;
   }
   
-  .blockquote-footer {
-    color: #cd894e !important;
+  .social-icons {
+    display: inline-block !important;
+    padding-right: 15px;
+    padding-left: 15px;
   }

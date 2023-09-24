@@ -47,11 +47,7 @@
     color:rgb(230, 151, 61);
   }
   
-  .about-activity {
-    list-style: none !important;
-    text-align: left !important;
-    padding-left: 1px !important;
-  }
+  
   
   @media (max-width: 767px) {
     .about-img {

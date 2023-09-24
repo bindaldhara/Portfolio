@@ -27,8 +27,7 @@
     box-shadow: 0 4px 4px 5px rgba(145, 101, 65, 0.561) !important;
   }
   
-  
-  .btn-primary {
+  /* .btn-primary {
     color: #fff !important;
     background-color: #f8c96a !important;
     border-color: #f8c96a !important;
@@ -38,7 +37,8 @@
     color: #fff !important;
     background-color: rgba(145, 101, 65, 0.561) !important;
     border-color: rgba(145, 101, 65, 0.561) !important;
-  }
+  } */
+  
   .btn:focus {
     outline: none !important;
     box-shadow: none !important;

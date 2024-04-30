@@ -24,9 +24,9 @@ function Projects() {
             <ProjectCard
               imgPath={jira}
               title="AI Integration in Jira"
-              description="In Kotlin, performed unit testing using JUnit and Mockito, crafting 5+ test cases to cover all edge scenarios 
-              Elevated SonarQube integration, augmenting code coverage from 30% to 80%, resulting in significant improvement .
-              Utilized Workato to integrate AI into Jira Service Management project, enhancing its functionality and automation"
+              description=
+
+"In Kotlin, I performed unit testing using JUnit and Mockito, meticulously crafting over 5 test cases to comprehensively cover all edge scenarios. Moreover, I implemented advanced SonarQube integration, significantly elevating code coverage from 30% to 80%, resulting in remarkable improvements in code quality. Additionally, I leveraged Workato to seamlessly integrate AI capabilities into the Jira Service Management project, thereby enhancing its functionality and automation capabilities to streamline processes and boost efficiency."
               demoLink="https://drive.google.com/file/d/1ZfDbZqqGrkVUaLIuRSeoM9n5jckA6de3/view?usp=drive_link"
             />
           </Col>
@@ -42,7 +42,7 @@ function Projects() {
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={picture}
               isBlog={false}
@@ -54,7 +54,7 @@ function Projects() {
               demoLink="https://github.com/bindaldhara/News-Aggregator"
                           
             />
-          </Col>
+          </Col> */}
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={reservet}

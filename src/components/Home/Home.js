@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import workingMan from "../../Assets/200.gif";
+import workingMan from "../../Assets/IMG_4783 (1).jpg";
 import Type from "./Type";
 import  './home.css';
 

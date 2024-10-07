@@ -19,12 +19,12 @@
   }
   
   .heading {
-    font-size: 2.4em !important;
+    font-size: 70px !important;
     padding-left: 50px !important;
   }
   
   .heading-name {
-    font-size: 2.5em !important;
+    font-size: 70px !important;
     padding-left: 45px !important;
   }
   
@@ -33,12 +33,12 @@
   }
   
   .Typewriter__wrapper {
-    font-size: 2.2em !important;
+    font-size: 50px !important;
     color: rgb(244, 185, 118) !important;
     font-weight: 600 !important;
   }
   .Typewriter__cursor {
-    font-size: 2.4em !important;
+    font-size: 45px !important;
     color: rgb(244, 185, 118) !important;
   }
   

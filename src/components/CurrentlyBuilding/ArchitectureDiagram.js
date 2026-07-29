@@ -171,6 +171,7 @@ function ArchitectureDiagram() {
         </div>
 
         {/* Footer / progress */}
+        
         <div className="shrink-0 pt-2 border-t border-dark-600/60">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[9px] text-gray-500 uppercase tracking-[0.2em]">

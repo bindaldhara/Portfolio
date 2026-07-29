@@ -1,6 +1,76 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
-body {
-  margin-top:0;
-  font-family: "Raleway", serif !important;
-  background-image: linear-gradient(to left,rgba(18, 19, 18, 0.582),rgb(190, 97, 83));
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+::selection {
+  background-color: rgba(201, 168, 108, 0.3);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.03; transform: scale(1); }
+  50% { opacity: 0.08; transform: scale(1.05); }
+}
+
+.hero-label { animation: fadeInUp 0.8s ease-out 0.2s both; }
+.hero-title { animation: fadeInUp 0.8s ease-out 0.4s both; }
+.hero-subtitle { animation: fadeInUp 0.8s ease-out 0.6s both; }
+.hero-socials { animation: fadeInUp 0.8s ease-out 0.8s both; }
+.hero-scroll { animation: fadeInUp 0.8s ease-out 1s both; }
+
+.gradient-orb { animation: pulse-glow 6s ease-in-out infinite; }
+.gradient-orb-2 { animation: pulse-glow 8s ease-in-out 2s infinite; }
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201, 168, 108, 0.2) 50%, transparent 100%);
+}
+
+@keyframes timeline-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201, 168, 108, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(201, 168, 108, 0); }
+}
+.timeline-dot-active { animation: timeline-pulse 2s ease-in-out infinite; }
+
+.card-glow { position: relative; }
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(201, 168, 108, 0.1), transparent, rgba(201, 168, 108, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+.card-glow:hover::before { opacity: 1; }

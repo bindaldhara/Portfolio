@@ -1,60 +1,10 @@
-.home-header {
-    padding-top: 40px !important;
-  }
-  
-  .home-section {
-    position: relative;
-    z-index: -1;
-    min-height: calc(100vh - 70px);
-    background-image: var(--image-gradient);
-    background-repeat: no-repeat;
-    padding-bottom: 20px !important;
-    padding-top: 30px !important;
-  }
-  
-  .home-content {
-    padding: 9rem 0 2rem !important;
-    color: whitesmoke;
-    text-align: left;
-  }
-  
-  .heading {
-    font-size: 70px !important;
-    padding-left: 50px !important;
-  }
-  
-  .heading-name {
-    font-size: 70px !important;
-    padding-left: 45px !important;
-  }
-  
-  .main-name {
-    color: rgb(244, 185, 118);
-  }
-  
-  .Typewriter__wrapper {
-    font-size: 50px !important;
-    color: rgb(244, 185, 118) !important;
-    font-weight: 600 !important;
-  }
-  .Typewriter__cursor {
-    font-size: 45px !important;
-    color: rgb(244, 185, 118) !important;
-  }
-  
-  @media (max-width: 767px) {
-    .Typewriter__wrapper {
-      font-size: 1.4em !important;
-      font-weight: 500 !important;
-      position: absolute !important;
-    }
-    .Typewriter__cursor {
-      display: none !important;
-    }
-    .home-section{
-      height:980px;
-    }
-  }
- 
-  
-  
+/* Typewriter styling */
+.Typewriter__wrapper {
+  font-size: inherit !important;
+  color: inherit !important;
+  font-weight: inherit !important;
+}
+.Typewriter__cursor {
+  font-size: inherit !important;
+  color: #c9a86c !important;
+}

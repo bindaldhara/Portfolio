@@ -1,0 +1,10 @@
+---
+description: Do not open the browser unless the user explicitly asks for it
+alwaysApply: true
+---
+
+# No Browser Unless Asked
+
+- Do NOT open the browser or take screenshots unless the user explicitly asks you to.
+- This includes refactoring tasks, styling changes, bug fixes, and any code edits — never auto-open the browser to "verify" or "preview".
+- Browser automation is expensive in tokens. Only use it when the user says something like "open the browser", "check in the browser", or "take a screenshot".

@@ -1,106 +1,114 @@
-import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
-import { Link } from "react-router-dom";
-import { CgFileDocument } from "react-icons/cg";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import './navbar.css';
+import { CgFileDocument } from "react-icons/cg";
+import { FaBriefcase, FaTrophy } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+
+const navLinks = [
+  { id: "home", label: "Home", icon: <AiOutlineHome /> },
+  { id: "about", label: "About", icon: <AiOutlineUser /> },
+  { id: "experience", label: "Experience", icon: <FaBriefcase /> },
+  { id: "projects", label: "Projects", icon: <AiOutlineFundProjectionScreen /> },
+  { id: "achievements", label: "Achievements", icon: <FaTrophy /> },
+  { id: "testimonials", label: "Testimonials", icon: <CgFileDocument /> },
+  { id: "resume", label: "Resume", icon: <CgFileDocument /> },
+  { id: "contact", label: "Contact", icon: <SiGmail /> },
+];
 
 function NavBar() {
-  const [expand, updateExpanded] = useState(false);
-  const [navColour, updateNavbar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
+  const handleScroll = useCallback(() => {
+    setScrolled(window.scrollY > 20);
+
+    const sections = navLinks.map((l) => document.getElementById(l.id)).filter(Boolean);
+    const scrollPos = window.scrollY + window.innerHeight / 3;
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+      if (sections[i].offsetTop <= scrollPos) {
+        setActiveSection(sections[i].id);
+        break;
+      }
     }
-  }
+  }, []);
 
-  window.addEventListener("scroll", scrollHandler);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [handleScroll]);
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setMobileOpen(false);
+  };
 
   return (
-    <Navbar
-      expanded={expand}
-      fixed="top"
-      expand="md"
-      className={navColour ? "sticky" : "navbar"}
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-dark-900/95 backdrop-blur-md shadow-lg shadow-black/20"
+          : "bg-transparent"
+      }`}
     >
-      <Container>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+        <button
+          onClick={() => scrollTo("home")}
+          className="text-accent font-serif text-2xl font-semibold hover:text-accent-light transition-colors bg-transparent border-none cursor-pointer"
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link 
-              as={Link} 
-              to="/" 
-              onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
+          DB
+        </button>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/about"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
+        <div className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className={`text-sm tracking-wide transition-colors bg-transparent border-none cursor-pointer ${
+                activeSection === link.id
+                  ? "text-accent"
+                  : "text-gray-400 hover:text-accent-light"
+              }`}
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/project"
-                onClick={() => updateExpanded(false)}
-              >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />
-                Projects
-              </Nav.Link>
-            </Nav.Item>
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2 bg-transparent border-none cursor-pointer"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
+          <span className={`block w-6 h-0.5 bg-accent transition-transform ${mobileOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-accent transition-opacity ${mobileOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-accent transition-transform ${mobileOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+      </div>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/resume"
-                onClick={() => updateExpanded(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={ Link }
-                to="/Acheivements"
-                onClick={() => updateExpanded(false)}
-              >
-               <CgFileDocument style={{ marginBottom: "2px" }} /> Acheivements
-              </Nav.Link>
-            </Nav.Item>
-            
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      {mobileOpen && (
+        <div className="md:hidden bg-dark-900/98 backdrop-blur-md border-t border-dark-600 px-6 py-4">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className={`block w-full text-left py-3 text-sm bg-transparent border-none cursor-pointer transition-colors ${
+                activeSection === link.id ? "text-accent" : "text-gray-400 hover:text-accent-light"
+              }`}
+            >
+              <span className="inline-flex items-center gap-2">
+                {link.icon} {link.label}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }
 

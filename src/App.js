@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import Preloader from "./components/preloader/Pre";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./components/Home/Home";
+import ContinueExploring from "./components/ContinueExploring/ContinueExploring";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
+import CurrentlyBuilding from "./components/CurrentlyBuilding/CurrentlyBuilding";
 import Projects from "./components/Projects/Projects";
 import Acheivements from "./components/Acheivements/Acheivements";
 import Testimonials from "./components/Testimonials/Testimonials";
@@ -29,8 +31,10 @@ function App() {
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <section id="home"><Home /></section>
+        <section id="explore"><ContinueExploring /></section>
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
+        <section id="building"><CurrentlyBuilding /></section>
         <section id="projects"><Projects /></section>
         <section id="achievements"><Acheivements /></section>
         <section id="testimonials"><Testimonials /></section>

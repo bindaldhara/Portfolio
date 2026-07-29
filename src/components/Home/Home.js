@@ -7,8 +7,8 @@ import { SiGmail } from "react-icons/si";
 
 function Home() {
   const handleScroll = () => {
-    const aboutSection = document.getElementById("about");
-    if (aboutSection) aboutSection.scrollIntoView({ behavior: "smooth" });
+    const exploreSection = document.getElementById("explore");
+    if (exploreSection) exploreSection.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -61,7 +61,7 @@ function Home() {
 
         <button
           onClick={handleScroll}
-          className="hero-scroll flex flex-col items-center gap-2 text-gray-500 text-sm mx-auto bg-transparent border-none cursor-pointer hover:text-accent transition-colors group"
+          className="hero-scroll flex flex-col items-center gap-2 text-gray-500 text-sm mx-auto bg-transparent border-none cursor-pointer hover:text-accent transition-colors group mb-4"
         >
           <span>Scroll to Explore</span>
           <span className="text-accent text-lg animate-bounce group-hover:animate-none">↓</span>

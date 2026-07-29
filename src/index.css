@@ -74,3 +74,14 @@ html {
   z-index: -1;
 }
 .card-glow:hover::before { opacity: 1; }
+
+.chapter-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.chapter-scroll::-webkit-scrollbar {
+  display: none;
+}
+.chapter-card:active {
+  transform: scale(0.98);
+}

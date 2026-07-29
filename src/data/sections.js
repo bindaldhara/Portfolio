@@ -3,7 +3,6 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
 import { FaBriefcase, FaTrophy, FaHammer, FaFileAlt, FaComments } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { HiOutlineSparkles } from "react-icons/hi";
